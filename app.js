@@ -21,6 +21,10 @@ fs.readFile('notas.json', 'utf8', (err, data) => {
 app.get('/tarefas', (req, res) => {
   res.json(tarefas);
 });
+// Rota GET para listar todas as tarefas
+app.get('/tarefas/vendas', (req, res) => {
+  res.json(tarefas);
+});
 
 // Rota GET para pegar uma tarefa específica pelo índice
 app.get('/tarefas/:index', (req, res) => {
