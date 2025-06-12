@@ -53,7 +53,7 @@ app.post('/login', (req, res) => {
   if (!usuario || !bcrypt.compareSync(senha, usuario.senha)) {
     return res.status(401).json({ message: 'Credenciais inválidas' });
   }
-
+  
   const token = jwt.sign(
     { id: usuario.id, email: usuario.email },
     process.env.JWT_SECRET,
